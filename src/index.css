@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #F5F5F7;
+    color: #1D1D1F;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+.font-mono-tabular {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Apple-grade minimal range slider */
+input[type="range"].studio-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 20px;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type="range"].studio-slider:focus {
+  outline: none;
+}
+
+input[type="range"].studio-slider::-webkit-slider-runnable-track {
+  height: 3px;
+  border-radius: 9999px;
+  background: linear-gradient(
+    to right,
+    #1D1D1F 0%,
+    #1D1D1F var(--slider-pct, 50%),
+    rgba(29, 29, 31, 0.14) var(--slider-pct, 50%),
+    rgba(29, 29, 31, 0.14) 100%
+  );
+  transition: background 120ms ease;
+}
+
+input[type="range"].studio-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 9999px;
+  background: #FFFFFF;
+  border: 0.5px solid rgba(0, 0, 0, 0.14);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 0.5px 1px rgba(0, 0, 0, 0.08);
+  margin-top: -6px;
+  transition: transform 150ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 150ms ease;
+}
+
+input[type="range"].studio-slider:hover::-webkit-slider-thumb {
+  transform: scale(1.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2), 0 0.5px 1px rgba(0, 0, 0, 0.1);
+}
+
+input[type="range"].studio-slider:focus-visible::-webkit-slider-thumb {
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.25), 0 1px 3px rgba(0, 0, 0, 0.18);
+}
+
+input[type="range"].studio-slider::-moz-range-track {
+  height: 3px;
+  border-radius: 9999px;
+  background: rgba(29, 29, 31, 0.14);
+}
+
+input[type="range"].studio-slider::-moz-range-progress {
+  height: 3px;
+  border-radius: 9999px;
+  background: #1D1D1F;
+}
+
+input[type="range"].studio-slider::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  border-radius: 9999px;
+  background: #FFFFFF;
+  border: 0.5px solid rgba(0, 0, 0, 0.14);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16);
+}
+
+/* Subtle checkerboard for transparent artboard preview */
+.checkerboard-surface {
+  background-color: #FFFFFF;
+  background-image:
+    linear-gradient(45deg, #EFEFF2 25%, transparent 25%),
+    linear-gradient(-45deg, #EFEFF2 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #EFEFF2 75%),
+    linear-gradient(-45deg, transparent 75%, #EFEFF2 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+/* Custom ultra-thin scrollbar for inspector */
+.studio-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+.studio-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.studio-scroll::-webkit-scrollbar-thumb {
+  background: rgba(29, 29, 31, 0.12);
+  border-radius: 9999px;
+}
+.studio-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(29, 29, 31, 0.24);
+}

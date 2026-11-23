@@ -1,0 +1,6 @@
+{
+  "name": "Serigrafia — Gerador de Bolhas Orgânicas",
+  "description": "Ferramenta visual minimalista para geração de composições orgânicas de bolhas em serigrafia com junções de ink bleed, animação cíclica e exportação em PNG e SVG vetorial.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
